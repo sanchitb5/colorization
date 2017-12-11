@@ -22,7 +22,7 @@ if __name__ == '__main__':
     height = height/3
 
     #Creating the image
-    new_im = Image.crop((width, 2*width, height, 2*height))
+    new_im = image.crop((width, height, 2*width, 2*height))
 
     new_im.save(args.img_out)
 
