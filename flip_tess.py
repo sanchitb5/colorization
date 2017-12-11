@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-    image = Image.open(args.img_in)
+    image = Image.open(args.img_in).convert('LA')
     width, height = image.size
 
     total_width = width * 3
@@ -44,4 +44,5 @@ if __name__ == '__main__':
     new_im.paste(doub_flip, (0, 2*height))
     new_im.paste(doub_flip, (2*width, 2*height))
 
-    new_im.save(args.img_out)
+    image.save(args.img_out + 'bw.png')
+    new_im.save(args.img_out + 'tess.png')
